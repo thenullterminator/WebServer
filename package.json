@@ -1,0 +1,22 @@
+{
+  "name": "webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenullterminator/WebServer.git"
+  },
+  "author": "Dhairya Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thenullterminator/WebServer/issues"
+  },
+  "homepage": "https://github.com/thenullterminator/WebServer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
