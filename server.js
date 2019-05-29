@@ -1,5 +1,7 @@
+const fs =require('fs');
 const express= require('express');
 const hbs=require('hbs');
+const port =process.env.PORT||3000;
 var app=express();//creating an application...
 
 
@@ -9,6 +11,23 @@ app.set('view engine','hbs');//setting view engine.....
 
 
 // app.use(express.static(__dirname+'/public'));// creating a static directory....
+
+app.use((req,res,next)=>{
+
+    var now=new Date().toString();
+    var log=`${now}: ${req.method}  ${req.url}`;
+    console.log(log);
+    fs.appendFileSync('server.log',log+'\n');
+    next();
+});
+
+
+// Maintenance page which prevents any of the handlers to work...
+// app.use((req,res,next)=>{ 
+
+//     res.render('maint.hbs');
+
+// });
 
 
 
@@ -47,6 +66,6 @@ app.get('/bad',(req,res)=>{
 });
 // another  route.....
 
-app.listen(3000,()=>{
-    console.log("Server is up on port 3000");
+app.listen(port,()=>{
+    console.log("Server is up on port "+ port);
 });// adding listener.....
