@@ -2,6 +2,12 @@ const express= require('express');
 
 var app=express();//creating an application...
 
+
+
+app.use(express.static(__dirname+'/public'));
+
+
+
 app.get('/',(req,res)=>{
 // res.send("<h1>Hello this is my first server! :)</h1>");
 
