@@ -40,7 +40,7 @@ app.get('/',(req,res)=>{
 //     age:19
 // });
 
-res.render('template.hbs',{
+res.render('home.hbs',{
 title:'Home',
 topic:'Home Page',
 message:'Welcome to Home!',
@@ -54,6 +54,13 @@ year: new Date().getFullYear()
 app.get('/about',(req,res)=>{
 
     res.send("About Page");
+});
+//new route.....
+
+
+app.get('/project',(req,res)=>{
+
+    res.send("Project Page");
 });
 //new route.....
 
