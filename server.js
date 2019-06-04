@@ -13,7 +13,7 @@ app.set('view engine','hbs');//setting view engine.....
 // app.use(express.static(__dirname+'/public'));// creating a static directory....
 
 app.use((req,res,next)=>{
-
+// creating server log file
     var now=new Date().toString();
     var log=`${now}: ${req.method}  ${req.url}`;
     console.log(log);
